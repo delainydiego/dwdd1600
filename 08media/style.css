@@ -1,0 +1,516 @@
+/* =========================================================
+   StrongHer Fitness - style.css
+   Color scheme (from Unit 2 design document):
+   #ff9999 - primary accent (coral pink)
+   #ffd6d6 - light pink
+   #d9f4cd - light green
+   #a6a6a6 - gray
+   #f2f2f2 - light gray background
+   ========================================================= */
+
+/* Google Font: Arimo (metric-compatible match for Helvetica) */
+
+/* ---- Box model: everything sized with border-box ---- */
+* {
+  box-sizing: border-box;
+}
+
+/* ---- Base page styles ---- */
+body {
+  margin: 0;
+  font-family: 'Arimo', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333333;
+  background-color: #f2f2f2;
+}
+
+/* ---- Headings ---- */
+h1 {
+  font-family: 'Arimo', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #ff9999;
+}
+
+h2 {
+  font-family: 'Arimo', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #a6a6a6;
+  border-bottom: 2px solid #d9f4cd;
+  padding-bottom: 5px;
+}
+
+/* ---- Paragraphs ---- */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* ---- Header ---- */
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border-bottom: 4px solid #ff9999;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text span:first-child {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ff9999;
+}
+
+.header-text span:last-child {
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #a6a6a6;
+}
+
+/* ---- Navigation ---- */
+/* Flexbox turns the nav ul into a menu; gradient adds visual depth to the bar */
+nav {
+  background: linear-gradient(180deg, #ffd6d6, #ff9999);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Mobile-first: a single column of stacked menu items on small screens.
+   No horizontal padding here so the selected item's highlight box
+   reaches all the way to the edge of the screen. */
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #333333;
+  font-weight: 700;
+}
+
+nav ul li a:hover {
+  background-color: #ff9999;
+  color: #ffffff;
+}
+
+/* Way-finding: highlight the link for the page currently being viewed */
+/* Works the same at every screen size, mobile through desktop */
+nav ul li a.active,
+nav ul li a[aria-current="page"] {
+  background-color: #ff9999;
+  color: #ffffff;
+}
+
+/* Tablet and desktop: switch the menu to a horizontal row above 800px */
+@media (min-width: 801px) {
+  nav ul {
+    flex-direction: row;
+    padding: 0 40px;
+  }
+}
+
+/* ---- Main content area ---- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  background-color: #ffffff;
+  border: 1px solid #a6a6a6;
+  border-radius: 12px;
+}
+
+/* Links inside the page content get their own hover treatment */
+main a {
+  color: #ff9999;
+}
+
+main a:hover {
+  color: #a6a6a6;
+  text-decoration: underline;
+}
+
+/* ---- Unordered lists ---- */
+main ul {
+  list-style-type: "\2022  "; /* custom bullet: bullet character + spacing */
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+main ul li {
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+
+/* ---- Ordered lists ---- */
+main ol {
+  list-style-type: decimal;
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+main ol li {
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+
+/* ---- Definition list ---- */
+dl {
+  background-color: #f2f2f2;
+  border: 1px solid #d9f4cd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 15px 0;
+}
+
+dt {
+  font-weight: 700;
+  color: #ff9999;
+  margin-top: 10px;
+}
+
+dd {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+/* ---- Address ---- */
+address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+/* ---- Footer ---- */
+footer {
+  max-width: 1000px;
+  margin: 30px auto 0 auto;
+  background-color: #a6a6a6;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.85rem;
+  clear: both;
+}
+
+/* ---- Full-width hero banner (matches site's max-width, not the browser) ---- */
+.hero-banner {
+  max-width: 1000px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .hero-banner img {
+    height: 250px;
+  }
+}
+
+/* ---- Image gallery page ---- */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px 0 20px 0;
+}
+
+.gallery figure {
+  width: 300px;
+  margin: 0;
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #a6a6a6;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Drop shadow on hover gives the gallery a sense of depth */
+.gallery img:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+.gallery figcaption {
+  font-size: 0.85rem;
+  color: #a6a6a6;
+  margin-top: 6px;
+}
+
+/* =========================================================
+   Training plan request form
+   ========================================================= */
+
+form {
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* ---- Fieldsets chunk the form into related groups (Chunking) ---- */
+fieldset {
+  border: 2px solid #d9f4cd;
+  border-radius: 10px;
+  padding: 20px 25px 25px 25px;
+  margin: 0 0 25px 0;
+  background-color: #f2f2f2;
+}
+
+legend {
+  font-family: 'Arimo', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ff9999;
+  padding: 0 10px;
+}
+
+/* ---- Labels double as instructions, kept close to their input (Proximity) ---- */
+form label {
+  display: block;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+.group-label {
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 8px 0;
+}
+
+/* ---- Text-style inputs, select, and textarea all match (Consistency) ---- */
+input[type="text"] {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #a6a6a6;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+input[type="email"] {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #a6a6a6;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+input[type="tel"] {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #a6a6a6;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+select {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #a6a6a6;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 110px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #a6a6a6;
+  border-radius: 8px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* ---- Radio and checkbox groups ---- */
+.radio-group,
+.checkbox-group {
+  margin-bottom: 16px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: block;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.radio-group input,
+.checkbox-group input {
+  margin-right: 8px;
+}
+
+/* ---- Submit button ---- */
+input[type="submit"] {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #ff9999;
+  border: 2px solid #a6a6a6;
+  border-radius: 8px;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #a6a6a6;
+}
+
+/* =========================================================
+   Media page: video, table, audio
+   ========================================================= */
+
+/* ---- Responsive video embed (adjusts to 100% of its container) ---- */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 15px 0 30px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #a6a6a6;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
+/* ---- Data table ---- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin: 15px 0 30px 0;
+  font-size: 0.95rem;
+}
+
+thead th {
+  background-color: #ff9999;
+  color: #ffffff;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 700;
+}
+
+tbody td {
+  padding: 12px 15px;
+  color: #333333;
+  border: none;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody tr:hover {
+  background-color: #ffd6d6;
+}
+
+/* ---- Audio player ---- */
+audio {
+  width: 100%;
+  max-width: 400px;
+  margin: 15px 0 30px 0;
+}
+
+/* ---- Responsive Google Map embed ---- */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 15px 0 30px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #a6a6a6;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}

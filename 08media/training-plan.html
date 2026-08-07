@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Delainy Winter">
+  <meta name="description" content="Request a free custom training plan from StrongHer Fitness based on your goals and experience level.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Plan | StrongHer Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="images/logo.png" alt="StrongHer Fitness logo" class="logo">
+    <div class="header-text">
+      <span>StrongHer Fitness</span>
+      <span>Strength, Confidence, and Health</span>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="benefits.html">Benefits</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="training-plan.html" class="active" aria-current="page">Get a Plan</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="location.html">Visit Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Get a Custom Training Plan</h1>
+    <p>Tell us a little about yourself and your goals, and our coaches will put together a starter training plan built around your schedule and experience level. It's free, and there's no obligation.</p>
+
+    <form action="thanks.html" method="GET">
+
+      <fieldset>
+        <legend>Contact Information</legend>
+
+        <label>Full Name
+          <input type="text" name="fullname" placeholder="Jane Smith" required>
+        </label>
+
+        <label>Email Address
+          <input type="email" name="email" placeholder="jane@example.com" required>
+        </label>
+
+        <label>Phone Number
+          <input type="tel" name="phone" placeholder="(801) 555-1234" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your Fitness Profile</legend>
+
+        <p class="group-label">Experience Level</p>
+        <div class="radio-group">
+          <label><input type="radio" name="experience" value="beginner" checked> Beginner &mdash; new to strength training</label>
+          <label><input type="radio" name="experience" value="intermediate"> Intermediate &mdash; lifting for 6+ months</label>
+          <label><input type="radio" name="experience" value="advanced"> Advanced &mdash; lifting for 2+ years</label>
+        </div>
+
+        <p class="group-label">What are your goals? (choose all that apply)</p>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="goals" value="strength"> Build strength</label>
+          <label><input type="checkbox" name="goals" value="muscle"> Build muscle</label>
+          <label><input type="checkbox" name="goals" value="fatloss"> Lose body fat</label>
+          <label><input type="checkbox" name="goals" value="mobility"> Improve mobility and flexibility</label>
+        </div>
+
+        <label>How many days a week can you train?
+          <select name="frequency">
+            <option value="2">2 days per week</option>
+            <option value="3">3 days per week</option>
+            <option value="4">4 days per week</option>
+            <option value="5plus">5 or more days per week</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tell Us More</legend>
+
+        <label>Any injuries, limitations, or questions we should know about?
+          <textarea name="notes" placeholder="Optional, but helpful for building your plan"></textarea>
+        </label>
+      </fieldset>
+
+      <input type="submit" value="Request My Plan">
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Delainy Winter | StrongHer Fitness | 1320 N Redwood Rd, Saratoga Springs, UT 84045</p>
+  </footer>
+
+</body>
+</html>
